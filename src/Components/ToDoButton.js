@@ -1,9 +1,11 @@
 import React from "react";
 
 function ToDoButton() {
-    return (
-        <button> +</button>
-    );
+  const addTask = () => {
+    console.log("Hi!");
+  };
+
+  return <button onClick={addTask}> +</button>;
 }
 
 export { ToDoButton };
