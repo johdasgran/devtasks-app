@@ -29,10 +29,16 @@ function App() {
       const seachText = search.toLowerCase();
       return taskText.includes(seachText);
     });
-
   } else {
     searchedTask = taskUser;
   }
+
+  const check = (text) => {
+    const taskIndex = tasks.findIndex((index) => index.text === text);
+    const newTasks = [...tasks];
+    newTasks[taskIndex].completed = true;
+    setTaskUser(newTasks);
+  };
 
   return (
     <>
@@ -41,7 +47,7 @@ function App() {
 
       <ToDoList>
         {searchedTask.map((task) => (
-          <ToDoItem key={task.text} text={task.text} />
+          <ToDoItem key={task.text} text={task.text} completed={task.completed} onComplete={() => check(task.text)} />
         ))}
       </ToDoList>
 

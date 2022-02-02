@@ -1,6 +1,7 @@
 import React from "react";
 
 function ToDoItem(props) {
+  
   const onComplete = () => {
     alert(`Has completado la tarea: ${props.text}`);
   };
