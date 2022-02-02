@@ -1,8 +1,8 @@
 import React from "react";
 
-function ToDoSearch() {
+function ToDoSearch({search, setSearch}) {
 
-    const [search, setSearch] = React.useState("");
+    
 
     const onSearchValue = (event) => {
         console.log(event.target.value);
@@ -10,10 +10,9 @@ function ToDoSearch() {
     }
 
 
-    return [
-        <input value={search} onChange={ onSearchValue } placeholder="Search..."/>,
-        <h1>{search}</h1>
-    ];
+    return (
+        <input value={search} onChange={ onSearchValue } placeholder="Search..."/>
+    );
 }
 
 export { ToDoSearch }

@@ -1,8 +1,8 @@
 import React from "react";
 
-function ToDoCounter() {
+function ToDoCounter({completed, inProgress}) {
     return (
-        <h2>Has completado 1 de 3 tareas.</h2>
+        <h2>Has completado {completed} de {inProgress} tareas.</h2>
     );
 }
 
