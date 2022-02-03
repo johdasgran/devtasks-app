@@ -1,11 +1,11 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React from "react";
-import { ToDoCounter } from "./Components/ToDoCounter";
-import { ToDoList } from "./Components/ToDoList";
-import { ToDoItem } from "./Components/ToDoItem";
-import { ToDoButton } from "./Components/ToDoButton";
-import { ToDoSearch } from "./Components/ToDoSearch";
+import { ToDoCounter } from "./Components/ToDoCounter/ToDoCounter";
+import { ToDoList } from "./Components/ToDoList/ToDoList";
+import { ToDoItem } from "./Components/ToDoItem/ToDoItem";
+import { ToDoButton } from "./Components/ToDoButton/ToDoButton";
+import { ToDoSearch } from "./Components/ToDoSearch/ToDoSearch";
 
 const tasks = [
   { text: "Curso intro react", completed: false },
