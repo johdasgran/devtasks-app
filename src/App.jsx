@@ -7,18 +7,28 @@ import { ToDoItem } from "./Components/ToDoItem/ToDoItem";
 import { ToDoButton } from "./Components/ToDoButton/ToDoButton";
 import { ToDoSearch } from "./Components/ToDoSearch/ToDoSearch";
 
-const tasks = [
-  { text: "Curso intro react", completed: false },
-  { text: "Practicar ingles", completed: false },
-  { text: "Practicar UX/UI", completed: true },
-  { text: "Listen to music", completed: true },
-  { text: "Diseñar un poco", completed: true },
-  { text: "Descansar", completed: false }
-];
+// const tasks = [
+//   { text: "Curso intro react", completed: false },
+//   { text: "Practicar ingles", completed: false },
+//   { text: "Practicar UX/UI", completed: true },
+//   { text: "Listen to music", completed: true },
+//   { text: "Diseñar un poco", completed: true },
+//   { text: "Descansar", completed: false }
+// ];
 
 function App() {
 
-  const [taskUser, setTaskUser] = React.useState(tasks);
+  const localStorageTask = localStorage.getItem('TASK_USER');
+  let parseTask;
+
+  if(localStorageTask) {
+    parseTask = JSON.parse(localStorageTask);
+  } else {
+    localStorage.setItem("TASK_USER", JSON.stringify([]));
+    parseTask = [];
+  }
+
+   const [taskUser, setTaskUser] = React.useState(parseTask);
   const [search, setSearch] = React.useState("");
 
   const completed = taskUser.filter((taskCompleted) => taskCompleted.completed);
@@ -36,18 +46,24 @@ function App() {
     searchedTask = taskUser;
   }
 
+  const saveTask = (newTasks) => {
+    const stringfyTask = JSON.stringify(newTasks);
+    localStorage.setItem("TASK_USER" , stringfyTask);
+    setTaskUser(newTasks);
+  }
+
   const checkTask = (text) => {
     const taskIndex = taskUser.findIndex(index => index.text === text);
     const newTasks = [...taskUser];
     newTasks[taskIndex].completed = true;
-    setTaskUser(newTasks);
+    saveTask(newTasks);
   };
 
   const deleteTask = (text) => {
     const taskIndex = taskUser.findIndex(index => index.text === text);
     const newTasks = [...taskUser];
     newTasks.splice(taskIndex, 1);
-    setTaskUser(newTasks);
+    saveTask(newTasks);
   };
 
 
