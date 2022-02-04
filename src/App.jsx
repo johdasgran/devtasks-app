@@ -6,6 +6,7 @@ import { ToDoList } from "./Components/ToDoList/ToDoList";
 import { ToDoItem } from "./Components/ToDoItem/ToDoItem";
 import { ToDoButton } from "./Components/ToDoButton/ToDoButton";
 import { ToDoSearch } from "./Components/ToDoSearch/ToDoSearch";
+import { useLocalStorage } from "./TaskContext/useLocalStorage";
 
 // const tasks = [
 //   { text: "Curso intro react", completed: false },
@@ -16,35 +17,8 @@ import { ToDoSearch } from "./Components/ToDoSearch/ToDoSearch";
 //   { text: "Descansar", completed: false }
 // ];
 
-function useLocalStorage (itemUser, initialValue) {
-  const localStorageItem = localStorage.getItem(itemUser);
-  let parseItem;
-
-  if (localStorageItem) {
-    parseItem = JSON.parse(localStorageItem);
-  } else {
-    localStorage.setItem(itemUser, JSON.stringify(initialValue));
-    parseItem = [];
-  }
-
-  const [taskUser, setTaskUser] = React.useState(parseItem);
-  
-  const saveItem = (newItems) => {
-    const stringfyTask = JSON.stringify(newItems);
-    localStorage.setItem(itemUser, stringfyTask);
-    setTaskUser(newItems);
-  };
-
-  return [taskUser, saveItem];
-
-}
-
-
 function App() {
-
   const [taskUser, saveTask] = useLocalStorage("TASK_USER", []);
-
-  
 
   const [search, setSearch] = React.useState("");
 
@@ -61,8 +35,6 @@ function App() {
   } else {
     searchedTask = taskUser;
   }
-
-
 
   const checkTask = (text) => {
     const taskIndex = taskUser.findIndex((index) => index.text === text);
