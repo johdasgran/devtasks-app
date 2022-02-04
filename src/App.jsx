@@ -16,24 +16,40 @@ import { ToDoSearch } from "./Components/ToDoSearch/ToDoSearch";
 //   { text: "Descansar", completed: false }
 // ];
 
-function App() {
+function useLocalStorage (itemUser, initialValue) {
+  const localStorageItem = localStorage.getItem(itemUser);
+  let parseItem;
 
-  const localStorageTask = localStorage.getItem('TASK_USER');
-  let parseTask;
-
-  if(localStorageTask) {
-    parseTask = JSON.parse(localStorageTask);
+  if (localStorageItem) {
+    parseItem = JSON.parse(localStorageItem);
   } else {
-    localStorage.setItem("TASK_USER", JSON.stringify([]));
-    parseTask = [];
+    localStorage.setItem(itemUser, JSON.stringify(initialValue));
+    parseItem = [];
   }
 
-   const [taskUser, setTaskUser] = React.useState(parseTask);
+  const [taskUser, setTaskUser] = React.useState(parseItem);
+  
+  const saveItem = (newItems) => {
+    const stringfyTask = JSON.stringify(newItems);
+    localStorage.setItem(itemUser, stringfyTask);
+    setTaskUser(newItems);
+  };
+
+  return [taskUser, saveItem];
+
+}
+
+
+function App() {
+
+  const [taskUser, saveTask] = useLocalStorage("TASK_USER", []);
+
+  
+
   const [search, setSearch] = React.useState("");
 
   const completed = taskUser.filter((taskCompleted) => taskCompleted.completed);
 
-  
   let searchedTask = [];
 
   if (search.length >= 1) {
@@ -46,30 +62,21 @@ function App() {
     searchedTask = taskUser;
   }
 
-  const saveTask = (newTasks) => {
-    const stringfyTask = JSON.stringify(newTasks);
-    localStorage.setItem("TASK_USER" , stringfyTask);
-    setTaskUser(newTasks);
-  }
+
 
   const checkTask = (text) => {
-    const taskIndex = taskUser.findIndex(index => index.text === text);
+    const taskIndex = taskUser.findIndex((index) => index.text === text);
     const newTasks = [...taskUser];
     newTasks[taskIndex].completed = true;
     saveTask(newTasks);
   };
 
   const deleteTask = (text) => {
-    const taskIndex = taskUser.findIndex(index => index.text === text);
+    const taskIndex = taskUser.findIndex((index) => index.text === text);
     const newTasks = [...taskUser];
     newTasks.splice(taskIndex, 1);
     saveTask(newTasks);
   };
-
-
-
-
-
 
   return (
     <>
@@ -78,11 +85,11 @@ function App() {
 
       <ToDoList>
         {searchedTask.map((task) => (
-          <ToDoItem 
-          key={task.text} 
-          text={task.text} 
-          onComplete={() => checkTask(task.text)} 
-          onDelete={() => deleteTask(task.text)}
+          <ToDoItem
+            key={task.text}
+            text={task.text}
+            onComplete={() => checkTask(task.text)}
+            onDelete={() => deleteTask(task.text)}
           />
         ))}
       </ToDoList>
