@@ -7,7 +7,8 @@ import { ToDoItem } from "./Components/ToDoItem/ToDoItem";
 import { ToDoButton } from "./Components/ToDoButton/ToDoButton";
 import { ToDoSearch } from "./Components/ToDoSearch/ToDoSearch";
 import { useLocalStorage } from "./TaskContext/useLocalStorage";
-
+import { TaskModal } from "./Components/TaskModal/TaskModal";
+import "./Components/TaskModal/style.css";
 // const tasks = [
 //   { text: "Curso intro react", completed: false },
 //   { text: "Practicar ingles", completed: false },
@@ -18,9 +19,16 @@ import { useLocalStorage } from "./TaskContext/useLocalStorage";
 // ];
 
 function App() {
+
   const [taskUser, saveTask] = useLocalStorage("TASK_USER", []);
 
   const [search, setSearch] = React.useState("");
+  const [openModal, setOpenModal] = React.useState(false);
+
+
+  const closeModal = () => {
+    setOpenModal(false);
+  }
 
   const completed = taskUser.filter((taskCompleted) => taskCompleted.completed);
 
@@ -50,6 +58,8 @@ function App() {
     saveTask(newTasks);
   };
 
+  
+
   return (
     <>
       <ToDoCounter completed={completed.length} inProgress={taskUser.length} />
@@ -65,8 +75,13 @@ function App() {
           />
         ))}
       </ToDoList>
-
-      <ToDoButton />
+      {openModal ? (
+        <TaskModal>
+        <p>HELLLLO XD {searchedTask[0].text}</p>
+      </TaskModal>
+  ):""}
+     
+      <ToDoButton setOpenModal={setOpenModal} />
     </>
   );
 }
