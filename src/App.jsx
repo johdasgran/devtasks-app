@@ -1,11 +1,11 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React from "react";
-import { ToDoCounter } from "./Components/ToDoCounter/ToDoCounter";
-import { ToDoList } from "./Components/ToDoList/ToDoList";
-import { ToDoItem } from "./Components/ToDoItem/ToDoItem";
-import { ToDoButton } from "./Components/ToDoButton/ToDoButton";
-import { ToDoSearch } from "./Components/ToDoSearch/ToDoSearch";
+import { ToDoCounter } from "./Components/TaskCounter/TaskCounter";
+import { ToDoList } from "./Components/TaskList/TaskList";
+import { ToDoItem } from "./Components/TaskoItem/TaskItem";
+import { ToDoButton } from "./Components/TaskButton/TaskButton";
+import { ToDoSearch } from "./Components/TaskSearch/TaskSearch";
 import { useLocalStorage } from "./TaskContext/useLocalStorage";
 import { TaskModal } from "./Components/TaskModal/TaskModal";
 import { TaskForm } from "./Components/TaskModal/TaskForm";
