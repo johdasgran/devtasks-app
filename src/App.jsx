@@ -41,6 +41,12 @@ function App() {
     searchedTask = taskUser;
   }
 
+  const addTask = (text) => {
+    const newTasks = [...taskUser];
+    newTasks.push({completed: false, text})
+    saveTask(newTasks);
+  };
+
   const checkTask = (text) => {
     const taskIndex = taskUser.findIndex((index) => index.text === text);
     const newTasks = [...taskUser];
@@ -74,8 +80,8 @@ function App() {
       </ToDoList>
       {openModal ? (
         <TaskModal setOpenModal={setOpenModal} openModal={openModal} >
-        <p>Hi! - {searchedTask[0].text}</p>
-        <TaskForm />
+        <p>Hi!</p>
+        <TaskForm addTask={addTask} setOpenModal={setOpenModal} />
       </TaskModal>
   ): ""}
      

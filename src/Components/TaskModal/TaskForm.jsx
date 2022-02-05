@@ -1,13 +1,29 @@
 import React from "react";
 
 
-function TaskForm() {
+function TaskForm(props) {
+
+    const [newTask, setNewTask] = React.useState("");
+
+    const onChange = (event) => {
+        setNewTask(event.target.value);
+    }
+
+    const onLeave = () => {
+        props.setOpenModal(false);
+    }
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+        props.addTask(newTask);
+        props.setOpenModal(false);
+    }
 
     return (
-        <form>
-            <textarea placeholder="add task :)"></textarea>
+        <form onSubmit={onSubmit} >
+            <textarea onChange={onChange} placeholder="add task :)"></textarea>
             <div>
-                <button>
+                <button onClick={onLeave} type="button">
                     Leave
                 </button>
                 <button type="submit">
