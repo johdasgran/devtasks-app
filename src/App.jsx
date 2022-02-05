@@ -8,6 +8,7 @@ import { ToDoButton } from "./Components/ToDoButton/ToDoButton";
 import { ToDoSearch } from "./Components/ToDoSearch/ToDoSearch";
 import { useLocalStorage } from "./TaskContext/useLocalStorage";
 import { TaskModal } from "./Components/TaskModal/TaskModal";
+import { TaskForm } from "./Components/TaskModal/TaskForm";
 import "./Components/TaskModal/style.css";
 // const tasks = [
 //   { text: "Curso intro react", completed: false },
@@ -74,6 +75,7 @@ function App() {
       {openModal ? (
         <TaskModal setOpenModal={setOpenModal} openModal={openModal} >
         <p>Hi! - {searchedTask[0].text}</p>
+        <TaskForm />
       </TaskModal>
   ): ""}
      
