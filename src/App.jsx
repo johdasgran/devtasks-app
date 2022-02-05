@@ -43,8 +43,13 @@ function App() {
 
   const addTask = (text) => {
     const newTasks = [...taskUser];
-    newTasks.push({completed: false, text})
-    saveTask(newTasks);
+    if(text.length === 0) {
+      saveTask(newTasks);
+    } else {
+      newTasks.push({completed: false, text})
+      saveTask(newTasks);
+    }
+  
   };
 
   const checkTask = (text) => {
