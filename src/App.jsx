@@ -26,10 +26,6 @@ function App() {
   const [openModal, setOpenModal] = React.useState(false);
 
 
-  const closeModal = () => {
-    setOpenModal(false);
-  }
-
   const completed = taskUser.filter((taskCompleted) => taskCompleted.completed);
 
   let searchedTask = [];
@@ -76,10 +72,10 @@ function App() {
         ))}
       </ToDoList>
       {openModal ? (
-        <TaskModal>
-        <p>HELLLLO XD {searchedTask[0].text}</p>
+        <TaskModal setOpenModal={setOpenModal} openModal={openModal} >
+        <p>Hi! - {searchedTask[0].text}</p>
       </TaskModal>
-  ):""}
+  ): ""}
      
       <ToDoButton setOpenModal={setOpenModal} />
     </>
