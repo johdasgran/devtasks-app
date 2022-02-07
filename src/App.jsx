@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 import React from "react";
 import { ToDoCounter } from "./Components/TaskCounter/TaskCounter";
 import { ToDoList } from "./Components/TaskList/TaskList";
@@ -21,12 +21,10 @@ import "./Components/TaskModal/style.css";
 // ];
 
 function App() {
-
   const [taskUser, saveTask] = useLocalStorage("TASK_USER", []);
 
   const [search, setSearch] = React.useState("");
   const [openModal, setOpenModal] = React.useState(false);
-
 
   const completed = taskUser.filter((taskCompleted) => taskCompleted.completed);
 
@@ -44,13 +42,12 @@ function App() {
 
   const addTask = (text) => {
     const newTasks = [...taskUser];
-    if(text.length === 0) {
+    if (text.length === 0) {
       saveTask(newTasks);
     } else {
-      newTasks.push({completed: false, text})
+      newTasks.push({ completed: false, text });
       saveTask(newTasks);
     }
-  
   };
 
   const checkTask = (text) => {
@@ -67,30 +64,33 @@ function App() {
     saveTask(newTasks);
   };
 
-  
-
   return (
     <>
       <ToDoCounter completed={completed.length} inProgress={taskUser.length} />
-      <ToDoSearch search={search} setSearch={setSearch} />
 
-      <ToDoList>
-        {searchedTask.map((task) => (
-          <ToDoItem
-            key={task.text}
-            text={task.text}
-            onComplete={() => checkTask(task.text)}
-            onDelete={() => deleteTask(task.text)}
-          />
-        ))}
-      </ToDoList>
+      <div className="container">
+        <ToDoSearch search={search} setSearch={setSearch} />
+        <ToDoList>
+          {searchedTask.map((task) => (
+            <ToDoItem
+              key={task.text}
+              text={task.text}
+              onComplete={() => checkTask(task.text)}
+              onDelete={() => deleteTask(task.text)}
+            />
+          ))}
+        </ToDoList>
+      </div>
+
       {openModal ? (
-        <TaskModal setOpenModal={setOpenModal} openModal={openModal} >
-        <p>Hi!</p>
-        <TaskForm addTask={addTask} setOpenModal={setOpenModal} />
-      </TaskModal>
-  ): ""}
-     
+        <TaskModal setOpenModal={setOpenModal} openModal={openModal}>
+          <p>Hi!</p>
+          <TaskForm addTask={addTask} setOpenModal={setOpenModal} />
+        </TaskModal>
+      ) : (
+        ""
+      )}
+
       <ToDoButton setOpenModal={setOpenModal} />
     </>
   );
