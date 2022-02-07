@@ -1,12 +1,35 @@
+:root {
+  /* Colors */
+  --devtask-title: #c088dd;
+
+  /* Font size */
+  --md: 1.6rem;
+
+  /* Weight */
+  --light: 300;
+  --medium: 500;
+  --bold: 700;
+}
+
 header {
-    display: flex;
-    place-content: center;
-    place-items: center;
-    height: 80px;
-  }
-  
-  .images {
-    width: auto;
-    height: 45px;
-  }
-  
+  display: flex;
+  place-content: center;
+  place-items: center;
+  height: 80px;
+}
+
+.images {
+  width: auto;
+  height: 45px;
+}
+
+p.counter {
+  font-size: var(--md);
+  font-weight: 500;
+}
+
+.counter span {
+  font-size: var(--md);
+  font-weight: 700;
+  color: var(--devtask-title);
+}
