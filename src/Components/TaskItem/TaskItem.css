@@ -1,0 +1,69 @@
+/** Task Item **/
+
+.task-item {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--devtask-sky);
+}
+
+.task-item:hover {
+  border: 1px solid var(--devtask-sky);
+  box-shadow: 0px 0px 10px 2px var(--devtask-sky);
+}
+
+.tasks ul > li {
+  display: flex;
+  place-items: center;
+  /* justify-content: center; */
+  list-style: none;
+  margin-bottom: 8px;
+  width: 300px;
+  /* place-content: space-between; */
+  position: relative;
+}
+
+.tasks .note {
+  font-size: var(--sm);
+  padding-right: 56px;
+  padding-left: 28px;
+}
+
+.check {
+  position: absolute;
+  background: url(../../images/perfect-circle.svg) no-repeat;
+  height: 20px;
+  width: 30px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.completed {
+  position: absolute;
+  background: url(../../images/completed.svg) no-repeat;
+  height: 20px;
+  width: 30px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.star {
+  position: absolute;
+  right: 30px;
+  background: url(../../images/star_115223.svg) no-repeat;
+  height: 20px;
+  width: 30px;
+  margin-left: 4px;
+  justify-self: end;
+  cursor: pointer;
+}
+
+.trash {
+  position: absolute;
+  right: 0;
+  background: url(../../images/trash.svg) no-repeat;
+  height: 20px;
+  width: 30px;
+  margin-left: 4px;
+  justify-self: end;
+  cursor: pointer;
+}

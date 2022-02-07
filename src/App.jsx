@@ -3,7 +3,7 @@ import "./App.css";
 import React from "react";
 import { ToDoCounter } from "./Components/TaskCounter/TaskCounter";
 import { ToDoList } from "./Components/TaskList/TaskList";
-import { ToDoItem } from "./Components/TaskoItem/TaskItem";
+import { ToDoItem } from "./Components/TaskItem/TaskItem";
 import { ToDoButton } from "./Components/TaskButton/TaskButton";
 import { ToDoSearch } from "./Components/TaskSearch/TaskSearch";
 import { useLocalStorage } from "./TaskContext/useLocalStorage";
