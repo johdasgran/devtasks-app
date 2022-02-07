@@ -1,0 +1,12 @@
+header {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    height: 80px;
+  }
+  
+  .images {
+    width: auto;
+    height: 45px;
+  }
+  

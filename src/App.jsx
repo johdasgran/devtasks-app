@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-// import './App.css';
+import './App.css';
 import React from "react";
 import { ToDoCounter } from "./Components/TaskCounter/TaskCounter";
 import { ToDoList } from "./Components/TaskList/TaskList";
@@ -10,6 +10,7 @@ import { useLocalStorage } from "./TaskContext/useLocalStorage";
 import { TaskModal } from "./Components/TaskModal/TaskModal";
 import { TaskForm } from "./Components/TaskModal/TaskForm";
 import "./Components/TaskModal/style.css";
+
 // const tasks = [
 //   { text: "Curso intro react", completed: false },
 //   { text: "Practicar ingles", completed: false },
