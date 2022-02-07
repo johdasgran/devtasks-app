@@ -9,6 +9,7 @@ import { ToDoSearch } from "./Components/TaskSearch/TaskSearch";
 import { useLocalStorage } from "./TaskContext/useLocalStorage";
 import { TaskModal } from "./Components/TaskModal/TaskModal";
 import { TaskForm } from "./Components/TaskModal/TaskForm";
+import { TaskMenu } from "./Components/TaskMenu/TaskMenu";
 import "./Components/TaskModal/style.css";
 
 // const tasks = [
@@ -82,6 +83,10 @@ function App() {
         </ToDoList>
       </div>
 
+
+      <TaskMenu />
+
+
       {openModal ? (
         <TaskModal setOpenModal={setOpenModal} openModal={openModal}>
           <p>Hi!</p>
@@ -91,8 +96,8 @@ function App() {
         ""
       )}
 
-      <ToDoButton setOpenModal={setOpenModal} />
-    </>
+      {/* <ToDoButton setOpenModal={setOpenModal} /> */}
+      </>
   );
 }
 
