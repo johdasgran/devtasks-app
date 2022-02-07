@@ -1,11 +1,11 @@
 // import logo from './logo.svg';
 import "./App.css";
 import React from "react";
-import { ToDoCounter } from "./Components/TaskCounter/TaskCounter";
-import { ToDoList } from "./Components/TaskList/TaskList";
-import { ToDoItem } from "./Components/TaskItem/TaskItem";
-import { ToDoButton } from "./Components/TaskButton/TaskButton";
-import { ToDoSearch } from "./Components/TaskSearch/TaskSearch";
+import { TaskCounter } from "./Components/TaskCounter/TaskCounter";
+import { TaskList } from "./Components/TaskList/TaskList";
+import { TaskItem } from "./Components/TaskItem/TaskItem";
+import { TaskButton } from "./Components/TaskButton/TaskButton";
+import { TaskSearch } from "./Components/TaskSearch/TaskSearch";
 import { useLocalStorage } from "./TaskContext/useLocalStorage";
 import { TaskModal } from "./Components/TaskModal/TaskModal";
 import { TaskForm } from "./Components/TaskModal/TaskForm";
@@ -67,25 +67,25 @@ function App() {
 
   return (
     <>
-      <ToDoCounter completed={completed.length} inProgress={taskUser.length} />
+      <TaskCounter completed={completed.length} inProgress={taskUser.length} />
 
       <div className="container">
-        <ToDoSearch search={search} setSearch={setSearch} />
-        <ToDoList>
+        <TaskSearch search={search} setSearch={setSearch} />
+        <TaskList>
           {searchedTask.map((task) => (
-            <ToDoItem
+            <TaskItem
               key={task.text}
               text={task.text}
               onComplete={() => checkTask(task.text)}
               onDelete={() => deleteTask(task.text)}
             />
           ))}
-        </ToDoList>
+        </TaskList>
       </div>
 
 
-      <TaskMenu />
-
+      <TaskButton setOpenModal={setOpenModal} />
+      
 
       {openModal ? (
         <TaskModal setOpenModal={setOpenModal} openModal={openModal}>
@@ -96,7 +96,9 @@ function App() {
         ""
       )}
 
-      {/* <ToDoButton setOpenModal={setOpenModal} /> */}
+      
+
+      <TaskMenu />
       </>
   );
 }

@@ -1,15 +1,19 @@
 import React from "react";
 
 
-function ToDoButton(props) {
+function TaskButton(props) {
 
   const addTask = () => {
     console.log("Hi!");
     props.setOpenModal(true);
   };
 
-  return <button onClick={addTask}> +</button>;
-  
+  return (
+  <div>
+  <p>Boton xd</p>
+  <button onClick={addTask}> +</button>
+  </div>
+  );
 }
 
-export { ToDoButton };
+export { TaskButton };

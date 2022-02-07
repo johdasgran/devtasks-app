@@ -1,7 +1,7 @@
 import React from "react";
 import "./TaskSearch.css";
 
-function ToDoSearch({ search, setSearch }) {
+function TaskSearch({ search, setSearch }) {
   const onSearchValue = (event) => {
     console.log(event.target.value);
     setSearch(event.target.value);
@@ -20,10 +20,8 @@ function ToDoSearch({ search, setSearch }) {
           type="text"
         />
       </div>
-
-      
     </>
   );
 }
 
-export { ToDoSearch };
+export { TaskSearch };

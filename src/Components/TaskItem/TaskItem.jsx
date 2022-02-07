@@ -1,7 +1,7 @@
 import React from "react";
 import "./TaskItem.css";
 
-function ToDoItem(props) {
+function TaskItem(props) {
   // const onComplete = () => {
   //   alert(`Has completado la tarea: ${props.text}`);
   // };
@@ -22,4 +22,4 @@ function ToDoItem(props) {
   );
 }
 
-export { ToDoItem };
+export { TaskItem };

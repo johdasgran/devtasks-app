@@ -3,7 +3,7 @@ import '../../App.css';
 import "./TaskCounter.css";
 import logo from '../../images/logo-new-dev-tasks.png';
 
-function ToDoCounter({ completed, inProgress }) {
+function TaskCounter({ completed, inProgress }) {
   return (
     <>
       <header className="header">
@@ -23,4 +23,4 @@ function ToDoCounter({ completed, inProgress }) {
   );
 }
 
-export { ToDoCounter };
+export { TaskCounter };

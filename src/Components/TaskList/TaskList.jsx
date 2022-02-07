@@ -1,7 +1,7 @@
 import React from "react";
 import "./TaskList.css"
 
-function ToDoList (props) {
+function TaskList (props) {
     return (
      <div className="tasks">
          <ul>
@@ -11,4 +11,4 @@ function ToDoList (props) {
     );
 }
 
-export { ToDoList };
+export { TaskList };
