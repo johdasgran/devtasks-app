@@ -1,0 +1,30 @@
+/** tasks **/
+
+.tasks {
+    margin-bottom: 100px;
+    overflow-y: scroll;
+    padding: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--devtask-primary) var(--devtask-title);
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  
+  .tasks::-webkit-scrollbar {
+    width: 8px; /* width of the entire scrollbar */
+  }
+  
+  .tasks::-webkit-scrollbar-track {
+    background: var(--devtask-primary); /* color of the tracking area */
+  }
+  
+  .tasks::-webkit-scrollbar-thumb {
+    background-color: var(--devtask-title);/*  color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+  }
+  
+  /* finish scroll design */
+  
+  .tasks ul {
+    height: 55vh;
+  } 
