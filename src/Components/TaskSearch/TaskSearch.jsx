@@ -1,7 +1,7 @@
 import React from "react";
 import "./TaskSearch.css";
 
-function TaskSearch({ search, setSearch, setOpenModal }) {
+function TaskSearch({ search, setSearch, setTaskStar, setOpenModal }) {
   const onSearchValue = (event) => {
     console.log(event.target.value);
     setSearch(event.target.value);
@@ -9,6 +9,7 @@ function TaskSearch({ search, setSearch, setOpenModal }) {
 
   const addTask = () => {
     console.log("Hi!");
+    setTaskStar(false);
     setOpenModal(true);
   };
 

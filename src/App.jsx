@@ -29,9 +29,12 @@ function App() {
 
   const [darkMode, setDarkMode] = React.useState(true);
 
+  const [taskStar, setTaskStar] = React.useState(false);
 
 
   const completed = taskUser.filter((taskCompleted) => taskCompleted.completed);
+
+  console.log(taskStar)
 
   let searchedTask = [];
 
@@ -50,10 +53,14 @@ function App() {
     if (text.length === 0) {
       saveTask(newTasks);
     } else {
-      newTasks.push({ completed: false, text });
+      newTasks.push({ completed: false, text, star: taskStar});
       saveTask(newTasks);
-    }
+    } 
   };
+
+  const addStar = () => {
+    setTaskStar(true);
+  }
 
   const checkTask = (text) => {
     const taskIndex = taskUser.findIndex((index) => index.text === text);
@@ -77,6 +84,7 @@ function App() {
         <TaskSearch
           search={search}
           setSearch={setSearch}
+          setTaskStar={setTaskStar}
           setOpenModal={setOpenModal}
         />
 
@@ -84,6 +92,8 @@ function App() {
           {searchedTask.map((task) => (
             <TaskItem
               completed={task.completed}
+              star={task.star}
+              taskStar={taskStar}
               key={task.text}
               text={task.text}
               onComplete={() => checkTask(task.text)}
@@ -97,7 +107,7 @@ function App() {
 
       {openModal ? (
         <TaskModal setOpenModal={setOpenModal} openModal={openModal}>
-          <TaskForm addTask={addTask} setOpenModal={setOpenModal} />
+          <TaskForm addStar={addStar} addTask={addTask} setOpenModal={setOpenModal} />
         </TaskModal>
       ) : (
         ""

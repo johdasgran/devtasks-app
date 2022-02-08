@@ -11,7 +11,12 @@ function TaskForm(props) {
 
     const onLeave = () => {
         props.setOpenModal(false);
+        // props.setTraskStar(false);
     }
+
+    // const onStar = () => {
+    //     props.setStar(true);
+    // }
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -27,7 +32,7 @@ function TaskForm(props) {
                 <button className="leave" onClick={onLeave} >
                     Leave
                 </button>
-                <button className="important" type="button">
+                <button className="important" onClick={props.addStar}  type="button" >
                     Star
                 </button>
                 <button className="submit" type="submit">
