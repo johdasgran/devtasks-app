@@ -52,6 +52,7 @@ p {
   color: var(--devtask-text);
   font-size: var(--md);
   font-weight: var(--medium);
+  /* color: var(--devtask-primary); */
 }
 
 body {
@@ -59,6 +60,7 @@ body {
   flex-direction: column;
   place-items: center;
   background-color: var(--devtask-primary);
+  /* background-color: var(--devtask-dark); */
   position: relative;
   height: 100vh;
   max-width: 320px;

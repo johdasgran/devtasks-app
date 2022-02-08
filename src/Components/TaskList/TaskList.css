@@ -29,3 +29,9 @@
 .tasks ul {
   height: 55vh;
 }
+
+@media (min-width: 1024px) {
+  .tasks ul {
+    height: 60vh;
+  } 
+}

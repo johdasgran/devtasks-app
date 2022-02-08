@@ -12,8 +12,6 @@ function TaskItem(props) {
     classNameText += " check-text";
   }
 
-
-
   return (
     <li className="task-item">
       <span className={className} onClick={props.onComplete}></span>
