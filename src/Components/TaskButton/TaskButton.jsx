@@ -10,8 +10,7 @@ function TaskButton(props) {
 
   return (
   <div>
-  <p>Boton xd</p>
-  <button onClick={addTask}> +</button>
+  <button className="icon add-task rotate-center" onClick={addTask}></button>
   </div>
   );
 }

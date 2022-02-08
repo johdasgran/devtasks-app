@@ -4,7 +4,7 @@ import React from "react";
 import { TaskCounter } from "./Components/TaskCounter/TaskCounter";
 import { TaskList } from "./Components/TaskList/TaskList";
 import { TaskItem } from "./Components/TaskItem/TaskItem";
-import { TaskButton } from "./Components/TaskButton/TaskButton";
+// import { TaskButton } from "./Components/TaskButton/TaskButton";
 import { TaskSearch } from "./Components/TaskSearch/TaskSearch";
 import { useLocalStorage } from "./TaskContext/useLocalStorage";
 import { TaskModal } from "./Components/TaskModal/TaskModal";
@@ -70,7 +70,12 @@ function App() {
       <TaskCounter completed={completed.length} inProgress={taskUser.length} />
 
       <div className="container">
-        <TaskSearch search={search} setSearch={setSearch} />
+        <TaskSearch
+          search={search}
+          setSearch={setSearch}
+          setOpenModal={setOpenModal}
+        />
+
         <TaskList>
           {searchedTask.map((task) => (
             <TaskItem
@@ -84,23 +89,18 @@ function App() {
         </TaskList>
       </div>
 
-
-      <TaskButton setOpenModal={setOpenModal} />
-      
+      {/* <TaskButton setOpenModal={setOpenModal} /> */}
 
       {openModal ? (
         <TaskModal setOpenModal={setOpenModal} openModal={openModal}>
-          <p>Hi!</p>
           <TaskForm addTask={addTask} setOpenModal={setOpenModal} />
         </TaskModal>
       ) : (
         ""
       )}
 
-      
-
       <TaskMenu />
-      </>
+    </>
   );
 }
 

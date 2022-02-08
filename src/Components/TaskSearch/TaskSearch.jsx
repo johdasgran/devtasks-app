@@ -1,10 +1,15 @@
 import React from "react";
 import "./TaskSearch.css";
 
-function TaskSearch({ search, setSearch }) {
+function TaskSearch({ search, setSearch, setOpenModal }) {
   const onSearchValue = (event) => {
     console.log(event.target.value);
     setSearch(event.target.value);
+  };
+
+  const addTask = () => {
+    console.log("Hi!");
+    setOpenModal(true);
   };
 
   return (
@@ -19,7 +24,7 @@ function TaskSearch({ search, setSearch }) {
           placeholder="Toda soltera... 🎶"
           type="text"
         />
-         <button className="icon add-task rotate-center"></button>
+         <button onClick={addTask} className="icon add-task rotate-center"></button>
       </div>
     </>
   );
