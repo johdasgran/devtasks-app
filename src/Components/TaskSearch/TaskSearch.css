@@ -1,43 +1,75 @@
 /** Search **/
 
 .search {
-    display: flex;
-    flex-direction: column;
-    place-content: center;
-    place-items: center;
-    padding-top: 20px;
-    color: var(--devtask-text);
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  color: var(--devtask-text);
+}
+
+.search > p {
+  padding-left: 8px;
+  font-size: var(--md);
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--devtask-title);
+}
+
+.search-icon {
+  background: url(../../images/search.svg) 100% no-repeat;
+  padding-left: 40px;
+  /* background-position: 100%; */
+}
+
+.input {
+  width: 270px;
+  border-radius: 8px;
+  height: 40px;
+  font-size: var(--sm);
+  padding: 8px;
+  border: 1px solid var(--devtask-title);
+  font-family: "Source Code Pro", monospace;
+  background-color: var(--devtask-white);
+  padding-right: 40px;
+  outline: none;
+}
+
+.input:hover {
+  box-shadow: 0px 0px 10px 2px var(--devtask-title);
+}
+
+.add-task {
+  background: url(../../images/add.svg) center/cover no-repeat;
+  padding: 8px;
+  height: 30px;
+  width: 30px;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.rotate-center:hover {
+  -webkit-animation: rotate-center 0.6s ease-in-out both;
+  animation: rotate-center 0.6s ease-in-out both;
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
   }
-  
-  .search > p {
-    padding-left: 8px;
-    font-size: var(--md);
-    font-weight: 700;
-    margin-bottom: 4px;
-    color: var(--devtask-title);
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-  
-  .search-icon {
-    background: url(../../images/search.svg) 100% no-repeat;
-    padding-left: 40px;
-    /* background-position: 100%; */
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
   }
-  
-  .input {
-    width: 300px;
-    border-radius: 8px;
-    height: 40px;
-    font-size: var(--sm);
-    padding: 8px;
-    margin-bottom: 16px;
-    border: 1px solid var(--devtask-title);
-    font-family: "Source Code Pro", monospace;
-    background-color: var(--devtask-white);
-    padding-right: 40px;
-    outline: none;
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-  
-  .input:hover {
-    box-shadow: 0px 0px 10px 2px var(--devtask-title);
-  }
-  
+}

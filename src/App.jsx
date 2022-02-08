@@ -74,6 +74,7 @@ function App() {
         <TaskList>
           {searchedTask.map((task) => (
             <TaskItem
+              completed={task.completed}
               key={task.text}
               text={task.text}
               onComplete={() => checkTask(task.text)}

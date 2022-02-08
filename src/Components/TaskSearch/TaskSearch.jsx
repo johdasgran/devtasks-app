@@ -19,6 +19,7 @@ function TaskSearch({ search, setSearch }) {
           placeholder="Toda soltera... 🎶"
           type="text"
         />
+         <button className="icon add-task rotate-center"></button>
       </div>
     </>
   );

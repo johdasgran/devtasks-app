@@ -28,6 +28,10 @@
   padding-left: 28px;
 }
 
+.icon {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .check {
   position: absolute;
   background: url(../../images/perfect-circle.svg) no-repeat;

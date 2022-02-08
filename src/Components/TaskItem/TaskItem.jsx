@@ -10,14 +10,22 @@ function TaskItem(props) {
   //   alert(`Has borrado la tarea: ${props.text}`);
   // };
 
-  console.log(props.onComplete);
+  // { completed, inProgress }
+
+  console.log(props.completed);
+
+  
+  let className = 'icon check';
+  if (props.completed) {
+    className = 'icon completed';
+  }
 
   return (
     <li className="task-item">
-      <span className="check" onClick={props.onComplete}></span>
+      <span className={className} onClick={props.onComplete}></span>
       <p className="note">{props.text}</p>
-      <span className="star"></span>
-      <span className="trash" onClick={props.onDelete}></span>
+      <span className="icon star"></span>
+      <span className="icon trash" onClick={props.onDelete}></span>
     </li>
   );
 }
