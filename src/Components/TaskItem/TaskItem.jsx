@@ -17,11 +17,12 @@ function TaskItem(props) {
   }
 
 
+
   return (
     <li className="task-item">
       <span className={className} onClick={props.onComplete}></span>
       <p className={classNameText}>{props.text}</p>
-      <span className={classStar}></span>
+      <span className={classStar} onClick={props.onStar}></span>
       <span className="icon trash" onClick={props.onDelete}></span>
     </li>
   );

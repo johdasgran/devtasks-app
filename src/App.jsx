@@ -62,10 +62,22 @@ function App() {
     setTaskStar(true);
   }
 
+  const checkStar= (text) => {
+    const taskIndex = taskUser.findIndex((index) => index.text === text);
+    const newTasks = [...taskUser];
+    newTasks[taskIndex].star= false;
+    saveTask(newTasks);
+  };
+
   const checkTask = (text) => {
     const taskIndex = taskUser.findIndex((index) => index.text === text);
     const newTasks = [...taskUser];
-    newTasks[taskIndex].completed = true;
+    if(newTasks[taskIndex].completed){
+      newTasks[taskIndex].completed = false;
+    } else {
+      newTasks[taskIndex].completed = true;
+    }
+    
     saveTask(newTasks);
   };
 
@@ -98,6 +110,7 @@ function App() {
               text={task.text}
               onComplete={() => checkTask(task.text)}
               onDelete={() => deleteTask(task.text)}
+              onStar={()=> checkStar(task.text)}
             />
           ))}
         </TaskList>
