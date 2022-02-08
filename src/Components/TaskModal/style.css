@@ -43,6 +43,7 @@
 .add-new-task {
   font-size: var(--sm);
   padding-left: 4px;
+  font-weight: 700;
 }
 
 .textarea {
@@ -82,14 +83,15 @@
 }
 
 .buttons > button {
-  font-size: var(--md);
+  font-size: var(--sm);
   border-radius: 8px;
   padding: 8px;
-  margin: 0 8px;
+  margin: 0 4px;
   border: none;
   color: var(--devtask-white);
   font-weight: 700;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;g
 }
 
 
@@ -100,6 +102,15 @@
 .submit {
   background-color: var(--devtask-green);
 }
+
+.important {
+  background-color: var(--devtask-star);
+}
+
+.important:hover {
+  box-shadow: 0px 0px 10px 2px var(--devtask-star);
+}
+
 
 .leave:hover {
   box-shadow: 0px 0px 10px 2px var(--devtask-red);

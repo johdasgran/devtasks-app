@@ -24,8 +24,11 @@ function TaskForm(props) {
             <p className="add-new-task" >Add new task. 👻</p>
             <textarea className="textarea" onChange={onChange} placeholder="add task :)"></textarea>
             <div className="buttons">
-                <button className="leave" onClick={onLeave} type="button">
+                <button className="leave" onClick={onLeave} >
                     Leave
+                </button>
+                <button className="important" type="button">
+                    Star
                 </button>
                 <button className="submit" type="submit">
                     Add task
