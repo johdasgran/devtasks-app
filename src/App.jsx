@@ -27,6 +27,10 @@ function App() {
   const [search, setSearch] = React.useState("");
   const [openModal, setOpenModal] = React.useState(false);
 
+  const [darkMode, setDarkMode] = React.useState(true);
+
+
+
   const completed = taskUser.filter((taskCompleted) => taskCompleted.completed);
 
   let searchedTask = [];
@@ -67,7 +71,7 @@ function App() {
 
   return (
     <>
-      <TaskCounter completed={completed.length} inProgress={taskUser.length} />
+      <TaskCounter completed={completed.length} inProgress={taskUser.length} darkMode={darkMode} setDarkMode={setDarkMode}/>
 
       <div className="container">
         <TaskSearch

@@ -23,3 +23,23 @@ p.counter {
   font-weight: 700;
   color: var(--devtask-title);
 }
+
+.dark-mode {
+  background: url(../../images/dark_mode.svg) center/cover no-repeat;
+  padding: 8px;
+  height: 30px;
+  width: 30px;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.white-mode {
+  background: url(../../images/white-mode.svg) center/cover no-repeat;
+  padding: 8px;
+  height: 30px;
+  width: 30px;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+}
