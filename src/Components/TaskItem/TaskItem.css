@@ -26,6 +26,7 @@
   font-size: var(--sm);
   padding-right: 56px;
   padding-left: 28px;
+  text-decoration: 2px line-through var(--devtask-sky);
 }
 
 .icon {
