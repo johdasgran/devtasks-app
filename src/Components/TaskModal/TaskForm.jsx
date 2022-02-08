@@ -21,12 +21,13 @@ function TaskForm(props) {
 
     return (
         <form onSubmit={onSubmit} >
-            <textarea onChange={onChange} placeholder="add task :)"></textarea>
-            <div>
-                <button onClick={onLeave} type="button">
+            <p className="add-new-task" >Add new task. 👻</p>
+            <textarea className="textarea" onChange={onChange} placeholder="add task :)"></textarea>
+            <div className="buttons">
+                <button className="leave" onClick={onLeave} type="button">
                     Leave
                 </button>
-                <button type="submit">
+                <button className="submit" type="submit">
                     Add task
                 </button>
             </div>

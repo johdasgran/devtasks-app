@@ -15,7 +15,6 @@ function TaskModal(props) {
     <div className="modal">
       <div className="modal-content">
         <span onClick={closeModal} className="close">
-          ❌
         </span>
         {props.children}
       </div>

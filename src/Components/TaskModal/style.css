@@ -1,37 +1,126 @@
 /* The Modal (background) */
 .modal {
-    /* display: none;  Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  .close {
-    /* color: #aaa; */
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    /* color: black; */
-    /* text-decoration: none; */
-    cursor: pointer;
-  }
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #888;
+  height: 240px;
+  width: 270px;
+  border: 1px solid var(--devtask-title);
+  background-color: var(--devtask-white);
+  box-shadow: 0px 0px 10px 2px var(--devtask-title);
+  position: relative;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: url(../../images/close.svg) center/cover no-repeat;
+  height: 25px;
+  width: 25px;
+}
+
+.close:hover,
+.close:focus {
+  cursor: pointer;
+}
+
+.add-new-task {
+  font-size: var(--sm);
+  padding-left: 4px;
+}
+
+.textarea {
+  margin: 16px 0;
+  width: 100%;
+  border-radius: 8px;
+  height: 120px;
+  font-size: var(--sm);
+  padding: 8px;
+  border: 1px solid var(--devtask-title);
+  font-family: "Source Code Pro", monospace;
+  background-color: var(--devtask-white);
+  padding-right: 40px;
+  outline: none;
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 120px;
+  min-height: 120px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--devtask-primary) var(--devtask-title);
+}
+
+/* Works on Chrome, Edge, and Safari */
+
+.textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.textarea::-webkit-scrollbar-thumb {
+  background-color: var(--devtask-title);
+  border-radius: 8px;
+}
+
+.buttons {
+  display: flex;
+  place-content: center;
+}
+
+.buttons > button {
+  font-size: var(--md);
+  border-radius: 8px;
+  padding: 8px;
+  margin: 0 8px;
+  border: none;
+  color: var(--devtask-white);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+.leave {
+  background-color: var(--devtask-red);
+}
+
+.submit {
+  background-color: var(--devtask-green);
+}
+
+.leave:hover {
+  box-shadow: 0px 0px 10px 2px var(--devtask-red);
+}
+
+.submit:hover {
+  box-shadow: 0px 0px 10px 2px var(--devtask-green);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
