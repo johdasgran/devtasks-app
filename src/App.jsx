@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import "./App.css";
 import React from "react";
 import { TaskCounter } from "./Components/TaskCounter/TaskCounter";
@@ -12,15 +11,6 @@ import { TaskForm } from "./Components/TaskModal/TaskForm";
 import { TaskMenu } from "./Components/TaskMenu/TaskMenu";
 import "./Components/TaskModal/style.css";
 
-// const tasks = [
-//   { text: "Curso intro react", completed: false },
-//   { text: "Practicar ingles", completed: false },
-//   { text: "Practicar UX/UI", completed: true },
-//   { text: "Listen to music", completed: true },
-//   { text: "Diseñar un poco", completed: true },
-//   { text: "Descansar", completed: false }
-// ];
-
 function App() {
   const [taskUser, saveTask] = useLocalStorage("TASK_USER", []);
 
@@ -29,14 +19,11 @@ function App() {
 
   const [darkMode, setDarkMode] = useLocalStorage("DARK_MODE", false);
 
-
-
   const [taskStar, setTaskStar] = React.useState(false);
-
 
   const completed = taskUser.filter((taskCompleted) => taskCompleted.completed);
 
-  console.log(taskStar)
+  console.log(taskStar);
 
   let searchedTask = [];
 
@@ -55,31 +42,31 @@ function App() {
     if (text.length === 0) {
       saveTask(newTasks);
     } else {
-      newTasks.push({ completed: false, text, star: taskStar});
+      newTasks.push({ completed: false, text, star: taskStar });
       saveTask(newTasks);
-    } 
+    }
   };
 
   const addStar = () => {
     setTaskStar(true);
-  }
+  };
 
-  const checkStar= (text) => {
+  const checkStar = (text) => {
     const taskIndex = taskUser.findIndex((index) => index.text === text);
     const newTasks = [...taskUser];
-    newTasks[taskIndex].star= false;
+    newTasks[taskIndex].star = false;
     saveTask(newTasks);
   };
 
   const checkTask = (text) => {
     const taskIndex = taskUser.findIndex((index) => index.text === text);
     const newTasks = [...taskUser];
-    if(newTasks[taskIndex].completed){
+    if (newTasks[taskIndex].completed) {
       newTasks[taskIndex].completed = false;
     } else {
       newTasks[taskIndex].completed = true;
     }
-    
+
     saveTask(newTasks);
   };
 
@@ -92,7 +79,12 @@ function App() {
 
   return (
     <>
-      <TaskCounter completed={completed.length} inProgress={taskUser.length} darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <TaskCounter
+        completed={completed.length}
+        inProgress={taskUser.length}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+      />
 
       <div className="container">
         <TaskSearch
@@ -114,7 +106,7 @@ function App() {
               text={task.text}
               onComplete={() => checkTask(task.text)}
               onDelete={() => deleteTask(task.text)}
-              onStar={()=> checkStar(task.text)}
+              onStar={() => checkStar(task.text)}
             />
           ))}
         </TaskList>
@@ -124,13 +116,17 @@ function App() {
 
       {openModal ? (
         <TaskModal setOpenModal={setOpenModal} openModal={openModal}>
-          <TaskForm addStar={addStar} addTask={addTask} setOpenModal={setOpenModal} />
+          <TaskForm
+            addStar={addStar}
+            addTask={addTask}
+            setOpenModal={setOpenModal}
+          />
         </TaskModal>
       ) : (
         ""
       )}
 
-      <TaskMenu />
+      {/* <TaskMenu /> */}
     </>
   );
 }

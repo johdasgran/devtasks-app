@@ -2,7 +2,7 @@
 
 .tasks {
   margin-top: 8px;
-  margin-bottom: 80px;
+  /* margin-bottom: 80px; - Margin en caso de agregar el TaskMenu  */
   overflow-y: scroll;
   padding: 6px;
   scrollbar-width: thin;
@@ -27,11 +27,12 @@
 /* finish scroll design */
 
 .tasks ul {
-  height: 55vh;
+  /* height: 55vh; - Para mas adelante si se agrega funcionalidad al TaskMenu */
+  height: 65vh;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .tasks ul {
     height: 60vh;
   } 
-}
+} */
