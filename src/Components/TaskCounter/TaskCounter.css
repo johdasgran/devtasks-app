@@ -24,8 +24,8 @@ p.counter {
   color: var(--devtask-title);
 }
 
-.dark-mode {
-  background: url(../../images/dark_mode.svg) center/cover no-repeat;
+
+.mode {
   padding: 8px;
   height: 30px;
   width: 30px;
@@ -34,12 +34,11 @@ p.counter {
   margin-left: 8px;
 }
 
+
+.dark-mode {
+  background: url(../../images/dark_mode.svg) center/cover no-repeat;
+}
+
 .white-mode {
   background: url(../../images/white-mode.svg) center/cover no-repeat;
-  padding: 8px;
-  height: 30px;
-  width: 30px;
-  border: none;
-  cursor: pointer;
-  margin-left: 8px;
 }

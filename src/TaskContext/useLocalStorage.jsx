@@ -7,6 +7,9 @@ function useLocalStorage(itemUser, initialValue) {
   if (localStorageItem) {
     parseItem = JSON.parse(localStorageItem);
   } else {
+    // Como intenta añadir por defecto un JSON.sntrigify al pasar un boolean
+    // causara un error. Se añade validacion de boolean
+    initialValue && localStorage.setItem(itemUser, initialValue);
     localStorage.setItem(itemUser, JSON.stringify(initialValue));
     parseItem = [];
   }

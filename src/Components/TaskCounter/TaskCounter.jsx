@@ -5,14 +5,23 @@ import logo from '../../images/logo-white.png';
 
 function TaskCounter({ completed, inProgress, darkMode, setDarkMode }) {
 
-  let className = "icon rotate-center";
+  let className = "icon rotate-center mode";
   if(darkMode){
     className += " dark-mode" 
   } else {
     className += " white-mode"
   }
 
+  const add_darkmode = () => {
+    if(darkMode) {
+      setDarkMode(false);
+      console.log("es true xd")
+    } else {
+      setDarkMode(true);
+      console.log("es falso xd")
+    }
 
+  }
 
   return (
     <>
@@ -23,7 +32,7 @@ function TaskCounter({ completed, inProgress, darkMode, setDarkMode }) {
           alt="logo dev tasks"
         
         />
-         <button onClick={() => setDarkMode(false)} className={className}></button>
+         <button onClick={add_darkmode} className={className}></button>
       </header>
     
       <p className="counter" >Has completado <span>{completed}</span> de <span>{inProgress}</span> tareas.</p>
