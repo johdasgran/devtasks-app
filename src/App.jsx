@@ -109,6 +109,7 @@ function App() {
               completed={task.completed}
               star={task.star}
               taskStar={taskStar}
+              darkMode={darkMode}
               key={task.text}
               text={task.text}
               onComplete={() => checkTask(task.text)}

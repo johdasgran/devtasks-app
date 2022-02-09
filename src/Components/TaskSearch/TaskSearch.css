@@ -20,9 +20,8 @@
 }
 
 .search-icon-white {
-  background: url(../../images/search-white.svg) 99% no-repeat;
+  background: url(../../images/search-white.svg) 100% no-repeat;
 }
-
 
 .input {
   width: 270px;
@@ -60,9 +59,8 @@
 }
 
 .add-task-black {
-  background: url(../../images/add-white.png) center/cover no-repeat;
+  background: url(../../images/add-white.svg) center/cover no-repeat;
 }
-
 
 .rotate-center:hover {
   -webkit-animation: rotate-center 0.6s ease-in-out both;

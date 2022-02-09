@@ -34,11 +34,18 @@
 
 .check {
   position: absolute;
-  background: url(../../images/perfect-circle.svg) no-repeat;
   height: 20px;
   width: 30px;
   margin-right: 4px;
   cursor: pointer;
+}
+
+.check-black {
+  background: url(../../images/perfect-circle.svg) no-repeat;
+}
+
+.check-white {
+  background: url(../../images/perfect-circle-white.svg) no-repeat;
 }
 
 .check-text {
