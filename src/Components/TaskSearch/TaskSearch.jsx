@@ -2,6 +2,7 @@ import React from "react";
 import "./TaskSearch.css";
 
 function TaskSearch({ search, setSearch, setTaskStar, setOpenModal, darkMode }) {
+
   const onSearchValue = (event) => {
     console.log(event.target.value);
     setSearch(event.target.value);
@@ -16,13 +17,16 @@ function TaskSearch({ search, setSearch, setTaskStar, setOpenModal, darkMode }) 
   let className = "icon add-task rotate-center";
   darkMode ? className += " add-task-black" : className += " add-task-white";
 
+  let classSearch ="search input";
+  darkMode ? classSearch += " search-icon-white" : classSearch += " search-icon-black";
+
   return (
     <>
       <div className="search">
         <input
           value={search}
           onChange={onSearchValue}
-          className="search input search-icon"
+          className={classSearch}
           placeholder="Toda soltera... 🎶"
           type="text"
         />
