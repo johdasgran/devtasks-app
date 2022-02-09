@@ -16,12 +16,11 @@
   margin: 15% auto; /* 15% from the top and centered */
   border-radius: 8px;
   padding: 20px;
-  border: 1px solid #888;
   height: 240px;
   width: 270px;
-  border: 1px solid var(--devtask-title);
-  background-color: var(--devtask-white);
-  box-shadow: 0px 0px 10px 2px var(--devtask-title);
+  border: 1px solid var(--devtask-sky);
+  background-color: var(--devtask-primary);
+  box-shadow: 0px 0px 10px 2px var(--devtask-sky);
   position: relative;
 }
 
@@ -52,10 +51,11 @@
   border-radius: 8px;
   height: 120px;
   font-size: var(--sm);
+  color: var(--devtask-text);
   padding: 8px;
-  border: 1px solid var(--devtask-title);
+  border: 1px solid var(--devtask-sky);
   font-family: "Source Code Pro", monospace;
-  background-color: var(--devtask-white);
+  background-color: var(--devtask-primary);
   padding-right: 40px;
   outline: none;
   max-width: 100%;
@@ -63,8 +63,13 @@
   max-height: 120px;
   min-height: 120px;
   scrollbar-width: thin;
-  scrollbar-color: var(--devtask-primary) var(--devtask-title);
+  scrollbar-color: var(--devtask-primary) var(--devtask-sky);
 }
+
+.textarea::placeholder {
+  color: var(--devtask-text);
+}
+
 
 /* Works on Chrome, Edge, and Safari */
 
@@ -87,30 +92,30 @@
   border-radius: 8px;
   padding: 8px;
   margin: 0 4px;
-  border: none;
-  color: var(--devtask-white);
+  /* border: none; */
+  background-color: var(--devtask-primary);
+  color: var(--devtask-text);
   font-weight: 700;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
 
-
 .leave {
-  background-color: var(--devtask-red);
+  border: 2px solid var(--devtask-red);
 }
 
 .submit {
-  background-color: var(--devtask-green);
+  border: 2px solid var(--devtask-green);
 }
 
 .important {
-  background-color: var(--devtask-star);
+  border: 2px solid var(--devtask-star);
 }
 
-.important:hover {
+.important:hover,
+.important:focus {
   box-shadow: 0px 0px 10px 2px var(--devtask-star);
 }
-
 
 .leave:hover {
   box-shadow: 0px 0px 10px 2px var(--devtask-red);
@@ -119,19 +124,3 @@
 .submit:hover {
   box-shadow: 0px 0px 10px 2px var(--devtask-green);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

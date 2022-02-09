@@ -30,6 +30,7 @@ function App() {
   const [darkMode, setDarkMode] = useLocalStorage("DARK_MODE", false);
 
 
+
   const [taskStar, setTaskStar] = React.useState(false);
 
 
@@ -99,6 +100,7 @@ function App() {
           setSearch={setSearch}
           setTaskStar={setTaskStar}
           setOpenModal={setOpenModal}
+          darkMode={darkMode}
         />
 
         <TaskList>

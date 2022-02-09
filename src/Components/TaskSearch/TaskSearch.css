@@ -12,7 +12,7 @@
   font-size: var(--md);
   font-weight: 700;
   margin-bottom: 4px;
-  color: var(--devtask-title);
+  /* color: var(--devtask-title); */
 }
 
 .search-icon {
@@ -27,19 +27,24 @@
   height: 40px;
   font-size: var(--sm);
   padding: 8px;
-  border: 1px solid var(--devtask-title);
+  border: 1px solid var(--devtask-purple);
   font-family: "Source Code Pro", monospace;
-  background-color: var(--devtask-white);
+  background-color: var(--devtask-primary);
+
   padding-right: 40px;
   outline: none;
 }
 
+.input::placeholder {
+  color: var(--devtask-text);
+}
+
 .input:hover {
-  box-shadow: 0px 0px 10px 2px var(--devtask-title);
+  box-shadow: 0px 0px 10px 2px var(--devtask-purple);
 }
 
 .add-task {
-  background: url(../../images/add.svg) center/cover no-repeat;
+  /* background: url(../../images/add.svg) center/cover no-repeat; */
   padding: 8px;
   height: 30px;
   width: 30px;
@@ -47,6 +52,15 @@
   cursor: pointer;
   margin-left: 8px;
 }
+
+.add-task-white {
+  background: url(../../images/add.svg) center/cover no-repeat;
+}
+
+.add-task-black {
+  background: url(../../images/add-white.png) center/cover no-repeat;
+}
+
 
 .rotate-center:hover {
   -webkit-animation: rotate-center 0.6s ease-in-out both;

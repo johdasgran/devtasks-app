@@ -21,7 +21,7 @@ p.counter {
 .counter span {
   font-size: var(--md);
   font-weight: 700;
-  color: var(--devtask-title);
+  color: var(--devtask-purple);
 }
 
 .mode {

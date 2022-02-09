@@ -1,23 +1,23 @@
 :root {
   /* Colors */
-  --devtask-primary: #fdfbfd;
-  --devtask-dark: #010727;
-  --devtask-title: #c088dd;
-  --devtask-text: #3d3043;
-  --devtask-sky: #8ab4f8;
+  /* --devtask-primary: #fdfbfd;
+  --devtask-text: #3d3043; */
+
+  
 
   /* #160d22 */
+  --devtask-purple: #c088dd;
 
   --devtask-red: #f24423;
   --devtask-blue: #1a73e8;
   --devtask-green: #3d8116;
   --devtask-star: #ffd100;
-  --devtask-white: #fff;
+  --devtask-dark: #010727;
+  --devtask-sky: #8ab4f8;
 
   /* Dark Mode */
-  /* --devtask-primary: #160d22;
-  --devtask-title: #8ab4f8;
-  --devtask-text: #fdfbfd; */
+  --devtask-primary: #1f1e25;
+  --devtask-text: #fdfbfd;
 
   /* Font size */
   --sm: 1.2rem;

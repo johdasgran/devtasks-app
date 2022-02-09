@@ -23,7 +23,7 @@ function TaskForm(props) {
       <textarea
         className="textarea"
         onChange={onChange}
-        placeholder="add task :)"
+        placeholder="add task 😖"
       ></textarea>
       <div className="buttons">
         <button className="leave" onClick={onLeave}>
