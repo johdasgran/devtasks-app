@@ -1,7 +1,8 @@
 import React from "react";
 import '../../App.css';
 import "./TaskCounter.css";
-import logo from '../../images/logo-white.png';
+import logoWhite from '../../images/logo-white.png';
+import logoBlack from '../../images/logo-black.png';
 
 function TaskCounter({ completed, inProgress, darkMode, setDarkMode }) {
 
@@ -12,13 +13,18 @@ function TaskCounter({ completed, inProgress, darkMode, setDarkMode }) {
     className += " white-mode"
   }
 
+  let logo;
+  darkMode ?  logo = logoBlack : logo = logoWhite;
+
+
   const add_darkmode = () => {
     if(darkMode) {
       setDarkMode(false);
-      console.log("es true xd")
+
+      // console.log("es true xd")
     } else {
       setDarkMode(true);
-      console.log("es falso xd")
+      // console.log("es falso xd")
     }
 
   }

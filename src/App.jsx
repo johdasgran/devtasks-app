@@ -27,8 +27,7 @@ function App() {
   const [search, setSearch] = React.useState("");
   const [openModal, setOpenModal] = React.useState(false);
 
-  // const [darkMode, setDarkMode] = React.useState(true);
-  const [darkMode, setDarkMode] = useLocalStorage("DARK_MODE", true);
+  const [darkMode, setDarkMode] = useLocalStorage("DARK_MODE", false);
 
 
   const [taskStar, setTaskStar] = React.useState(false);
