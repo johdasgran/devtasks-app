@@ -3,11 +3,8 @@
   /* --devtask-primary: #fdfbfd;
   --devtask-text: #3d3043; */
 
-  
 
-  /* #160d22 */
   --devtask-purple: #c088dd;
-
   --devtask-red: #f24423;
   --devtask-blue: #1a73e8;
   --devtask-green: #3d8116;
@@ -16,8 +13,8 @@
   --devtask-sky: #8ab4f8;
 
   /* Dark Mode */
-  --devtask-primary: #1f1e25;
-  --devtask-text: #fdfbfd;
+  /* --devtask-primary: #1f1e25;
+  --devtask-text: #fdfbfd; */
 
   /* Font size */
   --sm: 1.2rem;
@@ -30,6 +27,7 @@
   --medium: 500;
   --bold: 700;
 }
+
 
 * {
   box-sizing: border-box;
@@ -68,7 +66,6 @@ body {
   flex-direction: column;
   place-items: center;
   background-color: var(--devtask-primary);
-  /* background-color: var(--devtask-dark); */
   position: relative;
   height: 100vh;
   max-width: 320px;
